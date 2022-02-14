@@ -9,6 +9,8 @@ import { PcPortableComponent } from './pc-portable/pc-portable.component';
 import { PcBureauComponent } from './pc-bureau/pc-bureau.component';
 import { PcAccessoiresComponent } from './pc-accessoires/pc-accessoires.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { PhonesModule } from './modules/phones/phones.module';
+import { StockageModule } from './modules/stockage/stockage.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PhonesModule,
+    StockageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

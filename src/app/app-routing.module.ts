@@ -11,7 +11,12 @@ const routes: Routes = [
   { path : 'PcPortable', component: PcPortableComponent},
   { path : 'PcDeBureau', component:PcBureauComponent},
   { path : 'Accessoires',component : PcAccessoiresComponent},
-  { path : 'LogIn', component : ConnexionComponent}
+  { path : 'LogIn', component : ConnexionComponent},
+  /*{ path : 'Smartphones', children:[
+    {path : 'Android',component : PhonesComponent}
+  ]},
+  { path : 'stockage', loadChildren :'./stockage/stockage.module#stockageModule'}
+  */
 ];
 
 @NgModule({
