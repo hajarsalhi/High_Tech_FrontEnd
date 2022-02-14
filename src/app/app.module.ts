@@ -11,6 +11,8 @@ import { PcAccessoiresComponent } from './pc-accessoires/pc-accessoires.componen
 import { ConnexionComponent } from './connexion/connexion.component';
 import { PhonesModule } from './modules/phones/phones.module';
 import { StockageModule } from './modules/stockage/stockage.module';
+import { FormsModule  } from '@angular/forms';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { StockageModule } from './modules/stockage/stockage.module';
     PcPortableComponent,
     PcBureauComponent,
     PcAccessoiresComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PhonesModule,
-    StockageModule
+    StockageModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
