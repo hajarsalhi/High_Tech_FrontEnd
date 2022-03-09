@@ -2,29 +2,35 @@
 <form #connexionForm = "ngForm" (ngSubmit)="inscription()">
     <div class="form-group">
         <label for="exampleInputName">username</label>
-        <input type="text" class="form-control" id="exampleInputName"  >    
+        <input type="text" class="form-control" id="exampleInputName" [(ngModel)]="user.username" >    
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" ngModel email required #email="ngModel" >
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" [(ngModel)]="user.email" required #email="ngModel" >
       <div class ="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">
         Email required !
       </div>
-    </div>
+    </div >
+    <h4>Role</h4>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name ="password"  #password = "ngModel" ngModel required minlength="8" >
+      <input type="password" class="form-control" id="exampleInputPassword1" name ="password"  #password = "ngModel" [(ngModel)]="user.password" required minlength="8" >
       <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && password.touched" role="alert" > The password must have at least 8 caracters</div>
     </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Role
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuRole">
-        <li><a class="dropdown-item" href="#">ADMIN</a></li>
-        <li><a class="dropdown-item" href="#">USER</a></li>
-      </ul>
+    <div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value = "USER" [(ngModel)]="user.role">
+      <label class="form-check-label" for="flexRadioDefault1">
+        User
+      </label>
     </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value = "ADMIN" [(ngModel)]="user.role" checked>
+      <label class="form-check-label" for="flexRadioDefault2" >
+        ADMIN
+      </label>
+    </div>
+  </div>
     <button type="submit" class="btn btn-primary" [disabled] = "email.invalid|| password.invalid
     ">Signin</button>
   </form>

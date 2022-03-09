@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 import { SessionLoginService } from 'src/app/services/sessionLogin/session-login.service';
 
 @Component({
@@ -9,15 +10,15 @@ import { SessionLoginService } from 'src/app/services/sessionLogin/session-login
 })
 export class InscriptionComponent implements OnInit {
 
-  username = "" ;
-  password = "" ;
+  user = new User();
+
   constructor(private sessionLogin : SessionLoginService , private router : Router) { }
 
   ngOnInit(): void {
   }
 
   inscription(){
-    this.sessionLogin.login(this.username,this.password).subscribe(result =>{
+    this.sessionLogin.signIn(this.user.username,this.user.email,this.user.password,this.user.role).subscribe(result =>{
       this.router.navigate(['/LogIn']);
     }, error =>{
       console.log(error);

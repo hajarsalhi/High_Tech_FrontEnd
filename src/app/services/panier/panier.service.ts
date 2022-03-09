@@ -21,6 +21,10 @@ export class PanierService {
     this.articleList.next(article);
   }
 
+  addArticle( article : Article){
+    this.articleList.next(article);
+  }
+
   addToCart(article :any ){
     this.cartItemList.push(article);
     this.articleList.next(this.cartItemList);

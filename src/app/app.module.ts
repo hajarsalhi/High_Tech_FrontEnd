@@ -17,6 +17,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HttpClient, HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpXsrfInterceptorService } from './interceptors/http-xsrf-interceptor/http-xsrf-interceptor.service';
 import { UserAccountComponent } from './component/user-account/user-account.component';
+import { ArticleComponent } from './component/article/article.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { UserAccountComponent } from './component/user-account/user-account.comp
     InscriptionComponent,
     FooterComponent,
     UserAccountComponent,
+    ArticleComponent,
     
   ],
   imports: [

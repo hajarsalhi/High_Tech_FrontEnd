@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user';
 })
 export class SessionLoginService {
 
-  
+  public loggedUser : string ='' ;
   login_URL = "/rest/login/";
   Logout_URL = "/rest/logout/";
   signIn_URL = "/rest/signIn/";
@@ -25,6 +25,7 @@ export class SessionLoginService {
       this.http.post(this.login_URL,LoginData).subscribe(result =>{
         observer.next(true);
         observer.complete();
+        this.loggedUser = LoginData.username;
       },error =>{
         observer.error(false);
         observer.complete();
