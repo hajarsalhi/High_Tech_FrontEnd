@@ -18,7 +18,29 @@
               <li><a class="dropdown-item" routerLink="/PcPortable">PC Portable</a></li>
               <li><a class="dropdown-item" routerLink="/PcDeBureau">PC de Bureau</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" routerLink="/Accessoires">Accessoires</a></li>
+              <li><a class="dropdown-item" routerLink="/AccessoiresOrdinateur">Accessoires</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Téléphonie
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/SmartPhone">Smart Phone</a></li>
+              <li><a class="dropdown-item" routerLink="/TelFixe">Tel Fixe</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/AccessoiresTelephone">Accessoires</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Stockage
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/DisqueDur">Disque dur</a></li>
+              <li><a class="dropdown-item" routerLink="/CleUSB">clé USB</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/AccessoiresStockage">Accessoires</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -32,6 +54,10 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <button routerLink="cart" class="btn btn-primary">
+          <em style="font-size: 30px;" class="fas fa-cart-plus"></em>        
+          <div style="font-size: 10px;" class="badge bg-danger"></div>
+        </button>
       </div>
     </div>
   </nav>

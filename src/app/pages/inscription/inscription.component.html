@@ -1,0 +1,22 @@
+<p>Glad to have you as our customer!</p>
+<form #connexionForm = "ngForm" (ngSubmit)="inscription()">
+    <div class="form-group">
+        <label for="exampleInputName">username</label>
+        <input type="text" class="form-control" id="exampleInputName"  >    
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" ngModel email required #email="ngModel" >
+      <div class ="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">
+        Email required !
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name ="password"  #password = "ngModel" ngModel required minlength="8" >
+      <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && password.touched" role="alert" > The password must have at least 8 caracters</div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled] = "email.invalid|| password.invalid
+    ">Signin</button>
+  </form>
+  

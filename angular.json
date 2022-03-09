@@ -71,7 +71,8 @@
               "browserTarget": "HichTechStore:build:production"
             },
             "development": {
-              "browserTarget": "HichTechStore:build:development"
+              "browserTarget": "HichTechStore:build:development",
+              "proxyConfig" : "proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
