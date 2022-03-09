@@ -9,9 +9,9 @@ import { User } from 'src/app/models/user';
 export class SessionLoginService {
 
   public loggedUser : string ='' ;
-  login_URL = "/rest/login/";
-  Logout_URL = "/rest/logout/";
-  signIn_URL = "/rest/signIn/";
+  login_URL = "http//localhost:8080/rest/login/";
+  Logout_URL = "http//localhost:8080/rest/logout/";
+  signIn_URL = "http//localhost:8080/rest/signIn/";
 
   constructor(private http : HttpClient) { }
 
@@ -54,7 +54,7 @@ export class SessionLoginService {
       role : role
     }
     return new Observable<boolean>((observer)=>{
-      this.http.post(this.signIn_URL,SigninData).subscribe(result =>{
+      this.http.put(this.signIn_URL,SigninData).subscribe(result =>{
         observer.next(true);
         observer.complete();
       },error =>{

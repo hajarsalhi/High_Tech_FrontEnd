@@ -2,7 +2,7 @@
 <form #connexionForm = "ngForm" (ngSubmit)="inscription()">
     <div class="form-group">
         <label for="exampleInputName">username</label>
-        <input type="text" class="form-control" id="exampleInputName" [(ngModel)]="user.username" >    
+        <input type="text" class="form-control" id="exampleInputName" name = "username"[(ngModel)]="user.username" >    
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
@@ -11,23 +11,23 @@
         Email required !
       </div>
     </div >
-    <h4>Role</h4>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name ="password"  #password = "ngModel" [(ngModel)]="user.password" required minlength="8" >
       <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && password.touched" role="alert" > The password must have at least 8 caracters</div>
     </div>
     <div>
+      <label for="exampleInputRole">Role</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value = "USER" [(ngModel)]="user.role">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [value] = "user.role == 'ADMIN'" [(ngModel)]="user.role">
       <label class="form-check-label" for="flexRadioDefault1">
         User
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value = "ADMIN" [(ngModel)]="user.role" checked>
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  [value] = "user.role == 'ADMIN'" [(ngModel)]="user.role" >
       <label class="form-check-label" for="flexRadioDefault2" >
-        ADMIN
+        Admin
       </label>
     </div>
   </div>
