@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConnexionComponent } from './component/connexion/connexion.component';
+import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { AuthontificationGuardGuard as AuthGuardService } from './guards/authontification-guard.guard';
 import { NoauthontificationGuardGuard  as NoAuthService} from './guards/noauthontification-guard.guard';
-import { HomeComponent } from './component/home/home.component';
-import { InscriptionComponent } from './component/inscription/inscription.component';
+import { HomeComponent } from './pages/home/home.component';
+import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SmartPhonesComponent } from './modules/phones/smart-phones/smart-phones.component';
 import { PcAccessoiresComponent } from './component/pc-accessoires/pc-accessoires.component';
 import { PcBureauComponent } from './component/pc-bureau/pc-bureau.component';

@@ -16,6 +16,15 @@
       <input type="password" class="form-control" id="exampleInputPassword1" name ="password"  #password = "ngModel" ngModel required minlength="8" >
       <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && password.touched" role="alert" > The password must have at least 8 caracters</div>
     </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Role
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuRole">
+        <li><a class="dropdown-item" href="#">ADMIN</a></li>
+        <li><a class="dropdown-item" href="#">USER</a></li>
+      </ul>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled] = "email.invalid|| password.invalid
     ">Signin</button>
   </form>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class SessionLoginService {
       role : role
     }
     return new Observable<boolean>((observer)=>{
-      this.http.put(this.signIn_URL,SigninData).subscribe(result =>{
+      this.http.post(this.signIn_URL,SigninData).subscribe(result =>{
         observer.next(true);
         observer.complete();
       },error =>{
@@ -63,6 +64,20 @@ export class SessionLoginService {
 
   }
 
+  getUserFromDB(username : string) : Observable<User>{
+    return this.http.get<User>(this.login_URL);
+  }
+
+  isAdmin(username : string) : boolean{
+    let admin : boolean = false ;
+    this.getUserFromDB(username).subscribe((user : User)=>{
+      if(user.role == 'ADMIN')
+        admin = true ;  
+    })
+
+    return admin;
+  }
+  
   
 
 }
